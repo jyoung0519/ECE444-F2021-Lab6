@@ -20,7 +20,6 @@ def client():
     db.drop_all()  # teardown
 
 
-
 def login(client, username, password):
     """Login helper function"""
     return client.post(
@@ -86,4 +85,3 @@ def test_delete_message(client):
     rv = client.get("/delete/1")
     data = json.loads(rv.data)
     assert data["status"] == 1
-
